@@ -59,9 +59,9 @@ public class Person {
 		   String fName1 = p1.getfName().toUpperCase();
 		   String fName2 = p2.getfName().toUpperCase();
 		   return fName1.compareTo(fName2);
-  }};
-  public static Comparator<Person> ZipComp= new Comparator<Person>() {
-		public int compare(Person p1, Person p2) {
+	}};
+	public static Comparator<Person> ZipComp= new Comparator<Person>() {
+	  public int compare(Person p1, Person p2) {
 		   int zip1 = p1.getZip();
 		   int zip2 = p2.getZip();
 		   return zip1-zip2;
@@ -71,7 +71,23 @@ public class Person {
 		   String lName1 = p1.getlName().toUpperCase();
 		   String lName2 = p2.getlName().toUpperCase();
 		   return lName1.compareTo(lName2);
-  }};
+	}};
+	public static Comparator<Person> clearSort= new Comparator<Person>() {
+		public int compare(Person p1, Person p2)  { 
+			int fNameCompare = p1.getfName().compareTo(p2.getfName()); 
+			int lNameCompare = p1.getlName().compareTo(p2.getlName());  
+			if (fNameCompare == 0) { 
+				if(lNameCompare == 0){
+				    int zip1 = p1.getZip();
+				    int zip2 = p2.getZip();
+				    return zip1-zip2;
+				}else{
+					return lNameCompare; 	
+				}
+			} else { 
+				return fNameCompare; 
+			}
+	}};
 	//@Override
 	public String toString() {
 		return "Customer [id=" + id + ", fname=" + fname +", lname=" + lname+ ", address=" + address + ", zip=" + zip + "]";

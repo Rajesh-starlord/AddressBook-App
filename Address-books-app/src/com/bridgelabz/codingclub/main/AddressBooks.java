@@ -49,7 +49,7 @@ public class AddressBooks{
 								}
 							}
 							break;
-					case 5:System.out.println("1.sortBy Fname 2.sortBy lName 3.sortBy zip");
+					case 5:System.out.println("1.sortBy Fname 2.sortBy lName 3.sortBy zip 4.clearSort");
 							int sortBy=sc.nextInt();
 							if(sortBy == 1){
 								Features.sortBy("fName");
@@ -58,6 +58,8 @@ public class AddressBooks{
 							}
 							else if(sortBy == 3){
 								Features.sortBy("zip");
+							}else if(sortBy == 4){
+								Features.sortBy("clear");
 							}else{
 								 System.out.println("Enter a valid option:");
 							}
